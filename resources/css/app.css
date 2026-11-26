@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+[x-cloak] {
+    display: none !important;
+}
+
+@layer base {
+    body {
+        @apply bg-paper text-ink;
+    }
+
+    ::selection {
+        @apply bg-blue/15 text-navy;
+    }
+}
+
+/* Reusable building blocks for the public site */
+@layer components {
+    .container-page {
+        @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
+    }
+
+    .section {
+        @apply py-20 lg:py-24;
+    }
+
+    .eyebrow {
+        @apply inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.14em] text-blue;
+    }
+
+    .h-section {
+        @apply font-display font-bold text-3xl sm:text-4xl tracking-tight text-navy text-balance;
+    }
+
+    .lead {
+        @apply text-lg text-slate leading-relaxed;
+    }
+
+    .btn {
+        @apply inline-flex items-center justify-center gap-2 rounded-lg px-5 py-3 text-sm font-semibold transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue focus-visible:ring-offset-2;
+    }
+
+    .btn-lg {
+        @apply px-6 py-3.5 text-[15px];
+    }
+
+    .btn-primary {
+        @apply bg-blue text-white shadow-sm shadow-blue/25 hover:bg-blue-deep;
+    }
+
+    .btn-secondary {
+        @apply bg-white text-navy border border-line hover:border-slate/40 hover:bg-cloud;
+    }
+
+    .btn-dark {
+        @apply bg-navy text-white hover:bg-navy-deep;
+    }
+
+    .btn-light {
+        @apply bg-white text-navy hover:bg-sky;
+    }
+
+    .card {
+        @apply bg-white border border-line rounded-2xl;
+    }
+
+    .icon-box {
+        @apply grid place-items-center w-11 h-11 rounded-xl bg-sky text-blue;
+    }
+
+    .chip {
+        @apply inline-flex items-center rounded-full border border-line bg-white px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wider text-navy;
+    }
+
+    .bg-grid {
+        background-image:
+            linear-gradient(to right, rgb(228 233 241 / 0.7) 1px, transparent 1px),
+            linear-gradient(to bottom, rgb(228 233 241 / 0.7) 1px, transparent 1px);
+        background-size: 48px 48px;
+    }
+}

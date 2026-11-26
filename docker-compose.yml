@@ -1,0 +1,20 @@
+services:
+    app:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        container_name: sekolahdigital_app
+        ports:
+            - '8000:80'
+        volumes:
+            - '.:/var/www'
+            - './docker/php/local.ini:/usr/local/etc/php/conf.d/local.ini'
+        environment:
+            - DB_HOST=mysql-local
+        networks:
+            - nata_network
+
+networks:
+    nata_network:
+        external: true
+        name: nata_network
